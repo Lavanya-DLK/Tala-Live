@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import "assets/css/CompanyProfile/CompanyProfile.css"
+import React, { useEffect, useState } from 'react';
+import "assets/css/CompanyProfile/CompanyProfile.css";
 import noImage from "assets/img/no-image.jpg";
-import { BsCheck2 } from "react-icons/bs"
-import { FaTwitter } from "react-icons/fa"
-import { CiLinkedin } from "react-icons/ci"
-import BoldHeading from 'components/BoldHeading/BoldHeading'
-import { Link } from 'react-scroll'
+import { BsCheck2 } from "react-icons/bs";
+import { FaTwitter } from "react-icons/fa";
+import { CiLinkedin } from "react-icons/ci";
+import BoldHeading from 'components/BoldHeading/BoldHeading';
+import { Link } from 'react-scroll';
 import { useSelector } from 'react-redux';
 import { Button, Tooltip } from 'antd';
 import Form from 'react-bootstrap/Form';
-import { BsInfoCircle } from "react-icons/bs"
-import {HiOutlineLink} from "react-icons/hi"
+import { BsInfoCircle } from "react-icons/bs";
+import { HiOutlineLink } from "react-icons/hi";
 
 const GeneralInformation = ({
   data, cid,
@@ -29,6 +29,7 @@ const GeneralInformation = ({
       <div>{data.address2}</div>
     </div>
   );
+
   useEffect(() => {
     if (branchId) {
       const address = branches.find(item => item.id === parseInt(branchId));
@@ -68,13 +69,12 @@ const GeneralInformation = ({
     }
   }
 
- 
   return (
     <>
       <div className="col-xl-4 col-lg-4 col-md-12 mb-4">
         <div className="profile-left">
           <div className="image-area mt-4">
-            <img className="user-image" src={data.company_logo != '' ? data.company_logo : noImage} style={{width:"160px"}}/>
+            <img className="user-image" src={data.company_logo != '' ? data.company_logo : noImage} style={{ width: "160px" }} />
           </div>
           <div className="col-12 d-flex justify-content-center info-area" style={{ height: "40px", fontSize: "18px", fontWeight: "700" }}>
             {data.company_name}
@@ -157,11 +157,11 @@ const GeneralInformation = ({
                     {typeof data?.country !== 'undefined'
                       && data?.country.length > 0
                       && data?.country?.map((item, index) => {
-                        return (<option key={`sp${index}`} value={item} style={{fontSize:"12px"}}>{item}</option>);
+                        return (<option key={`sp${index}`} value={item} style={{ fontSize: "12px" }}>{item}</option>);
                       })}
                   </Form.Select>
                   : typeof data?.country !== 'undefined'
-                  && data?.country?.length > 0 && <div style={{fontSize:"12px",color:"darkgrey"}}>{data?.country[0]}</div>
+                  && data?.country?.length > 0 && <div style={{ fontSize: "12px", color: "darkgrey" }}>{data?.country[0]}</div>
                 }
               </div>
               {!lod && country &&
@@ -180,15 +180,15 @@ const GeneralInformation = ({
                         return (<option value={item.id} key={`op${index}`}>{item.branch_name}</option>);
                       })}
                     </Form.Select>
-                    : <div style={{ fontSize: "12px",color:"darkgrey",letterSpacing:"0px"}}>{"No Branches"}</div>}
-              </div>  
+                    : <div style={{ fontSize: "12px", color: "darkgrey", letterSpacing: "0px" }}>{"No Branches"}</div>}
+                </div>
               }
             </div>
           </div>
           <div className="d-flex flex-md-row flex-column">
             <div className="col-md-5 col-12 single-profile-info d-flex flex-column ">
-              <h6 className='col-3 d-flex flex-row mt-md-0 mt-3'>Website<span style={{ color: "#0F79D4", marginLeft: "5px", fontSize: "15px" }} ><HiOutlineLink /></span> </h6>            
-              <a onClick={() => validateUrl(data.website)} style={{ color: "darkgrey", cursor: "pointer",fontSize:"12px"}}
+              <h6 className='col-3 d-flex flex-row mt-md-0 mt-3'>Website<span style={{ color: "#0F79D4", marginLeft: "5px", fontSize: "15px" }} ><HiOutlineLink /></span> </h6>
+              <a onClick={() => validateUrl(data.website)} style={{ color: "darkgrey", cursor: "pointer", fontSize: "12px" }}
                 className='websiteLink'>{data.website}</a>
               <div className="d-flex flex-row ">
                 <div className="col-5 single-profile-info social">

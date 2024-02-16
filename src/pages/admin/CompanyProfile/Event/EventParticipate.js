@@ -54,11 +54,11 @@ const EventParticipate = ({ data }) => {
             :
             <div className='d-flex flex-column'>
               <div className='d-flex justify-content-center'>
-              <TbAlertCircle
-                style={{ color: "grey", fontSize: "26px" }}
-              />
-               </div>
-              <div className='d-flex justify-content-center mt-2' style={{ color: "grey",fontSize: "14px" }}>
+                <TbAlertCircle
+                  style={{ color: "grey", fontSize: "26px" }}
+                />
+              </div>
+              <div className='d-flex justify-content-center mt-2' style={{ color: "grey", fontSize: "14px" }}>
                 They are not attending any events.
               </div>
             </div>
